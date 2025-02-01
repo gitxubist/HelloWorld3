@@ -22,35 +22,35 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMainView()
+        setupView()
         setupSlider()
-        setColorView()
+        setupColorView()
     }
     
     // MARK: - IB Actions
     @IBAction private func redSliderAction() {
         howMuchRedLabel.text = (round(redSlider.value * 100) / 100).formatted()
-        setColorView()
+        setupColorView()
     }
     
     @IBAction private func greenSliderAction() {
         howMuchGreenLabel.text = (round(greenSlider.value * 100) / 100).formatted()
-        setColorView()
+        setupColorView()
     }
     
     @IBAction private func blueSliderAction() {
         howMuchBlueLabel.text = (round(blueSlider.value * 100) / 100).formatted()
-        setColorView()
+        setupColorView()
     }
 }
 
 // MARK: - Setup UI
 private extension ViewController {
-    func setupMainView() {
+    func setupView() {
         screenView.layer.cornerRadius = 15
     }
     
-    func setColorView() {
+    func setupColorView() {
         let red: CGFloat = CGFloat(redSlider.value)
         let green: CGFloat = CGFloat(greenSlider.value)
         let blue: CGFloat = CGFloat(blueSlider.value)
