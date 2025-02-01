@@ -29,16 +29,15 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - IB Actions
-    
-    @IBAction func redSliderAction(_ sender: UISlider) {
+    @IBAction private func redSliderAction() {
         howMuchRedLabel.text = (round(redSlider.value * 100) / 100).formatted()
     }
     
-    @IBAction func greenSliderAction(_ sender: UISlider) {
+    @IBAction private func greenSliderAction() {
         howMuchGreenLabel.text = (round(greenSlider.value * 100) / 100).formatted()
     }
     
-    @IBAction func blueSliderAction(_ sender: UISlider) {
+    @IBAction private func blueSliderAction() {
         howMuchBlueLabel.text = (round(blueSlider.value * 100) / 100).formatted()
     }
 }
