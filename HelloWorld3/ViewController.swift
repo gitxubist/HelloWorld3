@@ -22,10 +22,8 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let startColor = (round(redSlider.value * 100) / 100).formatted()
-        howMuchRedLabel.text = startColor
-        howMuchGreenLabel.text = startColor
-        howMuchBlueLabel.text = startColor
+        setupMainView()
+        setupSlider()
     }
     
     // MARK: - IB Actions
@@ -42,3 +40,22 @@ final class ViewController: UIViewController {
     }
 }
 
+// MARK: - Setup UI
+private extension ViewController {
+    func setupMainView() {
+        let red: CGFloat = CGFloat(redSlider.value)
+        let green: CGFloat = CGFloat(greenSlider.value)
+        let blue: CGFloat = CGFloat(blueSlider.value)
+        screenView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        screenView.layer.cornerRadius = 15
+        
+//        screenView.backgroundColor = UIColor(red: CGFloat, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: 1)
+    }
+    
+    func setupSlider() {
+        let startColor = (round(redSlider.value * 100) / 100).formatted()
+        howMuchRedLabel.text = startColor
+        howMuchGreenLabel.text = startColor
+        howMuchBlueLabel.text = startColor
+    }
+}
